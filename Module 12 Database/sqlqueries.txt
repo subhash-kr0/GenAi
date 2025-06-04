@@ -1,0 +1,71 @@
+CREATE DATABASE pwskillssql;
+
+use pwskillssql;
+
+select * from raw_orders;
+
+select user_id from raw_orders;
+
+select user_id as customer_id,status as updated_status from raw_orders;
+
+select order_date as date from raw_orders;
+
+select distinct user_id from raw_orders;
+
+select * from superstore as su;
+
+select * from superstore limit 10;
+
+select * from students;
+
+select count(`Order ID`) from superstore;
+
+select count(*) as total_number_of_records from superstore;
+
+select count(distinct(`Customer Name`)) as unique_customer_name from superstore;
+
+select * from superstore;
+
+select `Order date`,`Customer ID`,City 
+from superstore
+limit 5;
+
+select `Customer Name`,Quantity,`Ship Mode` from superstore
+where `Ship Mode`="Standard Class";
+
+select count(*) from superstore
+where Region="South" and Category="Furniture";
+
+select * from superstore
+where Sales between 500 and 900;
+
+select `Customer Name` from superstore
+where `Customer Name` like 'Ma%';
+
+select * from superstore
+where Category in ("Furniture","Technology");
+
+select avg(Sales) as average_sales from superstore;
+
+select round(sum(Sales)) as total_sales from superstore
+where Region='South';
+
+select min(Profit) as profit from superstore;
+
+select max(Profit) as profit from superstore;
+
+
+
+select * from superstore;
+select Sales,`Customer Name` from superstore order by `Customer Name`;
+
+select Region,round(sum(Sales)) as total_sales
+from superstore
+group by Region
+order by total_sales desc;
+
+
+
+
+
+
